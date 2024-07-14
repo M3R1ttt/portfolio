@@ -401,7 +401,7 @@ nav.mobile {
     }
 
     form {
-        height: 60vh;
+        height: 50vh;
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
@@ -421,7 +421,7 @@ nav.mobile {
         padding: 10px;
     }
     form textarea {
-        height: 300px;
+        height: 200px;
     }
     .contactPage {
         display: block;
