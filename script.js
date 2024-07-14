@@ -151,13 +151,30 @@ $(document).ready(function () {
             click = false;
         }
     });
-    
-    
+
     
     $(".deneme").load("/main/index.html");
     $("nav ul li").click(function (e) { 
         $("nav ul li").removeClass("active");
         $(this).addClass("active");      
+    });
+
+    var currentIndex = 0;
+    var $projects = $('.project');
+    var totalProjects = $projects.length;
+
+    $('.ileri').click(function() {
+        console.log("TIKLANDI");
+        currentIndex = (currentIndex + 1) % totalProjects;
+        var offset = -currentIndex * 60; // 60vw
+        $projects.parent().css('transform', 'translateX(' + offset + 'vw)');
+    });
+
+    $('.back').click(function() {
+        console.log("TIKLANDI");
+        currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+        var offset = -currentIndex * 60; // 60vw
+        $projects.parent().css('transform', 'translateX(' + offset + 'vw)');
     });
 
     $(".about").click(function (e) { 
@@ -222,7 +239,30 @@ $(document).ready(function () {
           $(".mobile").removeClass("active");
         }, 300);
     });
+
+    $(".projects").click(function (e) { 
+        $(".deneme").animate({
+            bottom: "-250vh"
+        }, 300);
+        $(".fixedMenu").animate({
+            opacity: "0"
+        }, 100);
+        setTimeout(() => {
+          $(".deneme").load("/projects/index.html");
+          setTimeout(() => {
+            $(".fixedMenu").animate({
+                opacity: "1"
+            }, 100);
+            $(".deneme").animate({
+                bottom: "0vh"
+            }, 100);
+          }, 300);
+          $(".mobile").removeClass("active");
+        }, 300);
+    });
 });
+
+
 
 
 function getBrowserInfo(userAgent) {
