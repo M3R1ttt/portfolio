@@ -1,0 +1,371 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'orbitron' sans-serif;
+}
+@font-face {
+    font-family: 'orbitron';
+    src: url('font/Orbitron-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cmd';
+    src: url('font/SourceCodePro-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+.preloader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #111;
+    z-index: 9990;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.cmdTab {
+    padding: 5px;
+    background-color: #3D3D3D;
+}
+.cmd {
+    height: 60vh;
+    width: 70vw;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'cmd', sans-serif !important;
+    font-weight: bold;
+}
+.cmdScreen {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cmdLine {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.windows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.pressenter {
+    text-align: center;
+}
+.square {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+html {
+    background-color: #111;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.deneme {
+    width: 90vw;
+    height: 90vh;
+    background: url("/image/arkaplan.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+}
+.time {
+    position: fixed;
+    bottom: 8vh;
+    left: 6vw;
+    z-index: 2;
+}
+.location {
+    position: fixed;
+    bottom: 8vh;
+    right: 6vw;
+    z-index: 2;
+}
+.browser {
+    position: fixed;
+    top: 8vh;
+    right: 6vw;
+    z-index: 2;
+}
+.longbite {
+    position: fixed;
+    top: 8vh;
+    left: 6vw;
+    z-index: 2;
+}
+.page {
+    position: relative;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+}
+.page h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(15px, 5vw, 150px);
+}
+nav {
+    position: fixed;
+    bottom: 1vw;
+    background-color: #3D3D3D;
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-family: "Orbitron", sans-serif;
+    z-index: 2;
+    color: white;
+    font-size: 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+nav ul li {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+nav ul li.active {
+    color: #EFF1C5;
+}
+.fixedMenu h3{
+    font-weight: 100;
+    font-family: "Orbitron", sans-serif;
+    font-size: 15px;
+    color: white;
+}
+.menuTitle {
+    color: #EFF1C5;
+}
+.aboutTitle {
+    text-align: center;
+    font-size: clamp(30px, 5vw, 50px);
+}
+.aboutParagraph {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #EFF1C5;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+.profileInfo h3 {
+    font-size: clamp(12px, 2vw, 20px);
+}
+form {
+    height: 60vh;
+    width: fit-content;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+}
+form input, form textarea {
+    display: block;
+    width: 400px;
+    border: none;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: rgba(227, 227, 227, 0.5);
+    opacity: 1;
+    padding: 10px;
+}
+form textarea {
+    height: 300px;
+}
+form input::placeholder, form textarea::placeholder {
+    color: white;
+}
+form input[type="submit"] {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EFF1C5;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+.profile img {
+    width: 50px;
+    height: 60px;
+    border: 2px solid #EFF1C5;
+}
+.socialmedias i {
+    color: #EFF1C5
+}
+.contactPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.contactDesc {
+    width: fit-content;
+}
+.navButton {
+    display: none;
+}
+nav.mobile {
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    .deneme {
+        width: 95vw;
+        height: 95vh;
+        background: url("arkaplan.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav {
+        display: none;
+    }
+    nav.mobile {
+        display: block;
+        position: fixed;
+        z-index: 998;
+        height: 0;
+        width: 0;
+        background-color: #EFF1C5;
+        overflow: hidden;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    nav.mobile.active {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    .mobile ul {
+        display: block;
+        color: black !important;
+    }
+    .navButton {
+        display: inline;
+        position: fixed;
+        height: 40px;
+        width: 40px;
+        bottom: 1vh;
+        z-index: 999;
+        border-radius: 50%;
+        background-color: #EFF1C5;
+        border: none;
+    }
+    .navButton i {
+        font-size: 20px;
+        color: #111;
+    }
+    .mobile ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+    }
+    .mobile ul li {
+        font-size: clamp(20px, 10vw, 600px);
+        transition: all 0.5s ease;
+    }
+    .mobile ul li:hover span{
+        opacity: 0;
+        margin-left: 20px;
+    }
+    .mobile ul li span {
+        font-size: 20px;
+        margin-right: 5px;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    .time {
+        position: fixed;
+        bottom: 5vh;
+        left: 6vw;
+    }
+    .location {
+        position: fixed;
+        bottom: 5vh;
+        right: 6vw;
+    }
+    .browser {
+        position: fixed;
+        top: 5vh;
+        right: 6vw;
+    }
+    .longbite {
+        position: fixed;
+        top: 5vh;
+        left: 6vw;
+    }
+
+    form {
+        height: 60vh;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+    }
+    form input, form textarea {
+        display: block;
+        width: 300px;
+        border: none;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background-color: rgba(227, 227, 227, 0.5);
+        opacity: 1;
+        padding: 10px;
+    }
+    form textarea {
+        height: 300px;
+    }
+    .contactPage {
+        display: block;
+    }
+    .contactDesc {
+        margin-bottom: 20px;
+        margin-left: auto;
+        width: fit-content;
+        margin-right: auto;
+    }
+    .aboutTitle {
+        text-align: center;
+        font-size: 40px !important;
+    }
+    .aboutParagraph {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        color: #EFF1C5;
+        text-align: center;
+        line-height: 2;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+    }
+}
