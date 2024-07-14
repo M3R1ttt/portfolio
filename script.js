@@ -226,7 +226,7 @@ $(document).ready(function () {
 
 
 function getBrowserInfo(userAgent) {
-    var browserInfo = { name: "Bilinmiyor", version: "Bilinmiyor" };
+    var browserInfo = { name: "Bilinmiyor"};
 
     if (userAgent.includes("Chrome")) {
         var match = /Chrome\/(\d+\.\d+\.\d+\.\d+)/.exec(userAgent);
