@@ -226,9 +226,9 @@ $(document).ready(function () {
 
 
 function getBrowserInfo(userAgent) {
-    var browserInfo = { name: "Bilinmiyor"};
+    var browserInfo = { name: "Bilinmiyor" };
 
-    if (userAgent.includes("Chrome")) {
+    if (userAgent.includes("Chrome") && !userAgent.includes("Edg") && !userAgent.includes("OPR")) {
         var match = /Chrome\/(\d+\.\d+\.\d+\.\d+)/.exec(userAgent);
         if (match) {
             browserInfo.name = "Chrome";
@@ -240,10 +240,29 @@ function getBrowserInfo(userAgent) {
             browserInfo.name = "Edge";
             browserInfo.version = match[1] || match[2];
         }
+    } else if (userAgent.includes("Firefox")) {
+        var match = /Firefox\/(\d+\.\d+)/.exec(userAgent);
+        if (match) {
+            browserInfo.name = "Firefox";
+            browserInfo.version = match[1];
+        }
+    } else if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) {
+        var match = /Version\/(\d+\.\d+)/.exec(userAgent);
+        if (match) {
+            browserInfo.name = "Safari";
+            browserInfo.version = match[1];
+        }
+    } else if (userAgent.includes("OPR")) {
+        var match = /OPR\/(\d+\.\d+\.\d+\.\d+)/.exec(userAgent);
+        if (match) {
+            browserInfo.name = "Opera";
+            browserInfo.version = match[1];
+        }
     }
 
     return browserInfo;
 }
+
 
 
 function updateDate() {
