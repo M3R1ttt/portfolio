@@ -13,10 +13,10 @@
             </div>
         </div>
     </div>
-    <form action="">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Message"></textarea>
+    <form action="sendemail.php" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
         <input type="submit" value="Submit">
-    </form>
+    </form>    
 </div>
