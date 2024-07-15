@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "</body></html>";
 
     if (mail($to, $subject, $body, $headers)) {
-        header("Location: index.php");
+        header("Location: ../index.html");
         echo "Email successfully sent!";
     } else {
         echo "Email sending failed.";
