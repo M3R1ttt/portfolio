@@ -1,7 +1,3 @@
-import { injectSpeedInsights } from '@vercel/speed-insights';
-
-injectSpeedInsights();
-
 $(document).ready(function () {
     updateTime()
     setInterval(updateTime, 10000);
