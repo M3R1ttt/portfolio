@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 $(document).ready(function () {
     updateTime()
     setInterval(updateTime, 10000);
