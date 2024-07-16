@@ -1,4 +1,6 @@
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights();
 
 $(document).ready(function () {
     updateTime()
